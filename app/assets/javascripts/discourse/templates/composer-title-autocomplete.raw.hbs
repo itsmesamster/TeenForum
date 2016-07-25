@@ -1,0 +1,11 @@
+<div class='autocomplete'>
+  <ul>
+    {{#each options as |option|}}
+      <li>
+       <a href="{{option.url}}">{{option.title}}</a>
+        Created At {{option.created_ago}}ays ago . {{option.created_by}}
+      </li>
+
+    {{/each}}
+  </ul>
+</div>

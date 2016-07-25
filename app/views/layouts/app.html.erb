@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<%= javascript_include_tag "bootstrap-modal.js" %>
+<script>
+</script>
+  <title>Align Network</title>
+  <%= render partial: "common/special_font_face" %>
+  <%= render partial: "common/discourse_stylesheet" %>
+  <%= script "vendor" %>
+  <%= script "application" %>
+</head>
+
+<body>
+<header class="d-header clearfix">
+  <div class="wrap">
+    <div class="contents clearfix">
+      <div class="title">
+        <a href="/" data-auto-route="true"><img src="/images/d-logo-sketch.png" alt="AlignNetwork" id="site-logo" class="logo-big"></a>
+      </div>
+      <div class="title"><ul><li class="li-heading" id="id-li"><a class="widget-link admin-link" href="/admin" title="Admin"><i class="fa fa-wrench" aria-hidden="true"></i> Admin</a></li><li class="li-heading" id="id-li"><a class="widget-link flagged-posts-link" href="/admin/flags" title="Home"><i class="fa fa-flag" aria-hidden="true"></i> Home</a></li><li class="li-heading" id="id-li"><a class="widget-link queued-posts-link" href="/queued-posts" title="Community"><i class="fa fa-gear" aria-hidden="true"></i> Community</a></li><li class="li-heading" id="id-li"><a class="widget-link settings-link" href="/admin/site_settings" title="Collaboration"><i class="fa fa-gear" aria-hidden="true"></i> Collaboration</a></li><li class="li-heading" id="id-li"><a class="widget-link settings-link" href="/admin/site_settings" title="Referral"><i class="fa fa-gear" aria-hidden="true"></i> Referral</a></li><li class="li-heading" id="id-li"><a class="widget-link settings-link" href="/admin/site_settings" title="People"><i class="fa fa-gear" aria-hidden="true"></i> People</a></li></ul><hr></div>
+      <div id="right-panel" class="panel clearfix" data-click-outside="true" ><span></span>
+        <ul id="links" role="navigation" class="icons clearfix">
+          <li id="search" class="header-dropdown-toggle">
+            <a data-auto-route="true" title="search topics, posts, users, or categories" aria-label="search topics, posts, users, or categories" id="search-button" class="icon" onclick="toggle_visibility('search-box','list-options','user-listing');"><i class="fa fa-search" aria-hidden="true"></i></a>
+          </li>
+          <li id="listing" class="header-dropdown-toggle">
+            <a data-auto-route="true" title="go to another topic list or category" aria-label="go to another topic list or category" id="toggle-hamburger-menu" class="icon" onclick="toggle_visibility('list-options', 'search-box', 'user-listing');"><i class="fa fa-bars" aria-hidden="true"></i></a>
+          </li>
+          <li id="current-user" class="header-dropdown-toggle current-user">
+            <a data-auto-route="true" class="icon" onclick="toggle_visibility('user-listing', 'search-box', 'list-options');">
+              <div>
+                <img alt="" width="32" height="32" src="/letter_avatar_proxy/v2/letter/t/f9ae1b/64.png" title="test" class="avatar">
+              </div>
+            </a></li>
+         
+        </ul>
+                <%= render partial: "layouts/links"%>   
+      </div>
+    </div>
+  </div>
+</header>
+<%= yield %>
+
+      <div id="option_modal" class="modal-dialog" data-keyboard="false" style="display: none; padding-right: 0px; position:relative; z-index: 9999;">
+        <div class="modal-outer-container">
+          <div class="modal-middle-container">
+            <div class="modal-inner-container">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="ks_modal" class="modal-dialog" data-keyboard="false" style="display: none; padding-right: 0px; position:relative; z-index: 9999;">
+        <div class="modal-outer-container">
+          <div class="modal-middle-container">
+            <div class="modal-inner-container">
+            </div>
+          </div>
+        </div>
+      </div>      
+</body>
+</html>

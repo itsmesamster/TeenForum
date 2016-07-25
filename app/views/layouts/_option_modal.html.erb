@@ -1,0 +1,46 @@
+
+              <div class="modal-header">
+                <a class="close" data-ember-action="1000" onclick="hideModal();"><i class="fa fa-times"></i></a>
+                <h3>Search Help</h3>
+                <div class="clearfix"></div>
+              </div>
+              <div id="modal-alert" style="display: none;"></div>
+                <div id="ember1591" class="ember-view"><div id="search-help" class="modal-body">
+                  <h3>Tips</h3>
+                  <p></p>
+                  <ul>
+                    <li>Title matches are prioritized – when in doubt, search for titles</li>
+                    <li>Unique, uncommon words will produce the best results</li>
+                    <li>Try searching within a particular category, topic, or user</li>
+                  </ul>
+                  <p></p>
+                  <h3>Options</h3>
+                  <p>
+                    </p><table>
+                    <tbody><tr><td><code>order:views</code></td><td><code>order:latest</code></td><td><code>order:likes</code></td><td><code>@username</code></td><td><code>user:foo</code></td></tr>
+                    <tr><td><code>status:open</code></td><td><code>status:closed</code></td><td><code>status:archived</code></td><td><code>status:noreplies</code></td><td><code>status:single_user</code></td></tr>
+                    <tr><td><code>#category-slug</code></td><td><code>category:foo</code></td><td><code>group:foo</code></td><td><code>badge:foo</code></td><td></td></tr>
+                    <tr><td><code>in:likes</code></td><td><code>in:posted</code></td><td><code>in:watching</code></td><td><code>in:tracking</code></td><td><code>in:private</code></td></tr>
+                    <tr><td><code>in:bookmarks</code></td><td><code>in:first</code></td><td><code>in:pinned</code></td><td><code>in:unpinned</code></td><td><code>in:wiki</code></td></tr>
+                    <tr><td><code>posts_count:num</code></td><td><code>before:days or date</code></td><td><code>after:days or date</code></td><td><code>tags:one,two</code></td><td></td></tr>
+                    </tbody></table>
+                  <p></p>
+                  <h3>Examples</h3>
+                  <p>
+                    </p><ul>
+                      <li><code>rainbows #parks</code> will search for topics containing the word "rainbows" in the category "parks".</li>
+                      <li><code>rainbows category:parks status:open order:latest</code> will search for topics containing the word "rainbows" in the category "parks" that are not closed or archived, ordered by date of last post.</li>
+                      <li><code>rainbows category:"parks and gardens" in:bookmarks</code> will search for topics containing the word "rainbows" in the category "parks and gardens" that are bookmarked by you.</li>
+                    </ul>
+                  <p></p>
+                  <h3>Search with Google</h3>
+                  <p></p>
+                  <form action="//google.com/search" id="google-search" onsubmit="document.getElementById('google-query').value = 'site:' + window.location.host + ' ' + document.getElementById('user-query').value; return true;">
+                    <input type="text" id="user-query" value="">
+                    <input type="hidden" id="google-query" name="q">
+                    <button class="btn btn-primary">Google</button>
+                  </form>
+                  <p></p>
+
+                </div>
+              </div>

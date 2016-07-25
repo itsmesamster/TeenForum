@@ -1,0 +1,2 @@
+
+uri: <%= uri = URI.parse(ENV['HEROKU_REDIS_BLUE_URL'] || "redis://localhost:6379") %>

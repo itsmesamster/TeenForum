@@ -1,0 +1,16 @@
+<div class="container" style="margin-top: 101px">
+
+  <div class="panel-group heading-group center-discussions" >
+    <div class="panel panel-info heading">
+      <div class="panel-heading heading-panel">
+        <i class="fa fa-comments-o fa-4x" aria-hidden="true"></i>
+        <%= @topics_count %> Topics <br>
+        <%= @views_count %>  Views
+      </div>
+
+      <div class="panel-body heading-body">
+        <%= link_to t('first.discussion'), "/posts/latest" %>
+      </div>
+    </div>
+  </div>
+</div>

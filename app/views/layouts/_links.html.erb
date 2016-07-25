@@ -1,0 +1,164 @@
+<script>
+
+    function toggle_visibility(id, id1,id2) {
+       var e = document.getElementById(id);
+       var c1= document.getElementById(id1);
+       var c2= document.getElementById(id2);
+       if(e.style.display == 'block'){
+          e.style.display = 'none';
+          c1.style.display = 'none';
+          c2.style.display = 'none';
+        }
+       else {
+          e.style.display = 'block';
+          c1.style.display = 'none';
+          c2.style.display = 'none';
+        }
+    };
+
+function showModal(){
+  $("#option_modal").modal('show');
+  $(".modal-inner-container").html("<%= escape_javascript(render 'layouts/option_modal') %>")
+};
+
+function hideModal(){
+  $("#option_modal").modal('hide');
+  $(".modal").on("hidden.bs.modal", function(){
+    $(".modal-inner-container").html("");
+  });
+};
+
+function showModalKS(){
+  $("#ks_modal").modal('show');
+  $(".modal-inner-container").html("<%= escape_javascript(render 'layouts/keyboard_shortcuts') %>")
+};
+
+function hideModalKS(){
+  $("#ks_modal").modal('hide');
+  $(".modal").on("hidden.bs.modal", function(){
+    $(".modal-inner-container").html("");
+  });
+};
+    function show(id, id1,id2) {
+       var e = document.getElementById(id);
+       var c1= document.getElementById(id1);
+       var c2= document.getElementById(id2);
+       if(e.style.display == 'block'){
+          e.style.display = 'none';
+          c1.style.display = 'none';
+          c2.style.display = 'none';
+        }
+       else {
+          e.style.display = 'block';
+          c1.style.display = 'none';
+          c2.style.display = 'none';
+        }
+    };
+
+$(window).click(function() {
+        document.getElementById('search-box').style.display = 'none';
+        document.getElementById('list-options').style.display = 'none';
+        document.getElementById('user-listing').style.display = 'none';
+});
+
+$('#right-panel').click(function(event){
+    event.stopPropagation();
+});
+
+</script>
+
+      <div id="search-box" data-click-outside="true" class="search-menu" style="display: none">
+        <div data-max-width="500" class="menu-panel drop-down" style="top: 100%; height: auto; width: 500px;">
+          <div class="panel-body">
+            <div class="panel-body-contents clearfix">
+              <input id="search-term" type="text" value="" placeholder="search topics, posts, users, or categories">
+              <div class="search-context">
+                <a class="widget-link show-help" title="options" data-toggle="modal" data-target="#option_modal" onclick="showModal();">options</a>
+                <div class="clearfix">
+                </div>
+              </div>
+              <div class="results"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="list-options" class="hamburger-panel" data-click-outside="true" style="display: none">
+        <div class="menu-panel drop-down" style="top: 100%; height: auto; width: 300px;">
+          <div class="panel-body">
+            <div class="panel-body-contents clearfix">
+              <div>
+                <ul class="menu-links columned">
+                  <li class="heading"><a href="/faq" class="faq-priority">FAQ <span class="badge badge-notification">new</span></a></li>
+                </ul>
+                <div class="clearfix"></div>
+                <hr>
+              </div>
+              <div class="">
+                <ul class="menu-links columned">
+                  <li class=""><a class="widget-link admin-link" href="/admin" title="Admin"><i class="fa fa-wrench" aria-hidden="true"></i> Admin</a></li>
+                  <li class=""><a class="widget-link flagged-posts-link" href="/admin/flags" title="Flags"><i class="fa fa-flag" aria-hidden="true"></i> Flags</a></li>
+                  <li class=""><a class="widget-link settings-link" href="/admin/site_settings" title="Settings"><i class="fa fa-gear" aria-hidden="true"></i> Settings</a></li>
+                </ul>
+                <div class="clearfix"></div>
+                <hr>
+              </div>
+              <div class="">
+                <ul class="menu-links columned">
+                  <li class=""><a class="widget-link latest-topics-link" href="/posts" title="Latest">Latest</a></li>
+                  <li class=""><a class="widget-link new-topics-link" href="/posts/new" title="New">New</a></li>
+                  <li class=""><a class="widget-link unread-topics-link" href="/posts/unread" title="Unread">Unread</a></li>
+                  <li class=""><a class="widget-link top-topics-link" href="/posts/top" title="Top">Top</a></li>
+                  <li class=""><a class="widget-link badge-link" href="/badges" title="Badges">Badges</a></li>
+                  <li class=""><a class="widget-link user-directory-link" href="/users" title="Users">Users</a></li>
+                  <li class=""><a class="widget-link" href="/tags" title="Tags">Tags</a></li>
+                </ul>
+                <div class="clearfix"></div>
+                <hr>
+              </div>
+              <ul class="category-links clearfix">
+                <li class="heading"><a href="/categories" class="d-link categories-link">Categories</a></li>
+                <li class="category-link"></li>
+                <li class="category-link"></li>
+                <li class="category-link"></li>
+                <li class="category-link"></li>
+              </ul>
+              <hr>
+              <div>
+                <ul class="menu-links columned">
+                  <li class=""><a class="widget-link about-link" href="/about" title="About">About</a></li>
+                  <li class=""><a class="widget-link keyboard-shortcuts-link" title="Keyboard Shortcuts" data-toggle="modal" data-target="#option_modal" onclick="showModalKS();">Keyboard Shortcuts</a></li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="user-listing" class="user-menu" data-click-outside="true" style="display: none">
+        <div class="menu-panel drop-down" style="top: 100%; height: auto; width: 300px;">
+          <div class="panel-body">
+            <div class="panel-body-contents clearfix">
+              <div class="menu-links-header">
+                <ul class="menu-links-row">
+                  <li class=""><a href="/users/ss1" class="widget-link user-activity-link" title="ss1"><i class="fa fa-user" aria-hidden="true"></i> ss1</a></li>
+                  <li class="glyphs"><a class="widget-link user-bookmarks-link" href="/users/ss1/activity/bookmarks" title="Bookmarks"><i class="fa fa-bookmark" aria-hidden="true"></i> </a><a class="widget-link user-pms-link" href="/users/ss1/messages" title="Messages"><i class="fa fa-envelope" aria-hidden="true"></i> </a><a class="widget-link user-preferences-link" href="/users/ss1/preferences" title="Preferences"><i class="fa fa-gear" aria-hidden="true"></i> </a></li>
+                </ul>
+              </div>
+              <div class="notifications">
+                <hr>
+                <ul>
+                  <li class="read last heading"><a href="/users/ss1/notifications">view older notifications...</a></li>
+                </ul>
+              </div>
+              <div class="logout-link">
+                <hr>
+                <ul class="menu-links">
+                  <li><a class="widget-link logout" title="Log Out"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

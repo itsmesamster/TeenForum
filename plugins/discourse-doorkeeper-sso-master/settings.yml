@@ -1,0 +1,13 @@
+# these are global settings
+title: Teen Forum Login
+message: Log in with Teen Forum credentials (make sure your browser does not block popups)
+frame_width: 920
+frame_height: 800
+
+
+# enviornment specific settings:
+environments:
+  development:
+    endpoint: http://localhost:3000
+    key: 28e5d51993bcf072e0d6c6a33c65327fcc794bee70931af106ed8f82e1a61dde
+    secret: b5ffd4b090faa6d47aed8f7371e9aa0521d24a277c77b1426eb8d33afc00c137

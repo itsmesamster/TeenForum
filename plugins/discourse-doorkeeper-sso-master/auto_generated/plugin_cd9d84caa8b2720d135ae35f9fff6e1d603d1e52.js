@@ -1,0 +1,2 @@
+(function(){Discourse.LoginMethod.register(Discourse.LoginMethod.create({"name":"doorkeeper","titleOverride":"Teen Forum Login","messageOverride":"Log in with Teen Forum credentials (make sure your browser does not block popups)","frameWidth":920,"frameHeight":800}));
+})();

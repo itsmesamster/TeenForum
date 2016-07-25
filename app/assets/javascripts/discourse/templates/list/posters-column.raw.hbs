@@ -1,0 +1,5 @@
+<div style='float:left'>
+{{#each posters as |poster|}}
+<a href="{{poster.user.path}}" data-user-card="{{poster.user.username}}" class="{{poster.extras}}">{{avatar poster avatarTemplatePath="user.avatar_template" usernamePath="user.username" imageSize="small"}}</a>
+{{/each}}
+</div>

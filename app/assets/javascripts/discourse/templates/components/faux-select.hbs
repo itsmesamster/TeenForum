@@ -1,0 +1,12 @@
+<h2>Sort By</h2>
+    <div class="faux-select">
+      <div class="faux-select-box">
+        <span class="faux-select-selected">{{selected}}</span>
+        <span class="faux-select-graphic">&#x25BE;</span>
+      </div>
+      <select  {{bind-attr name=name}}>
+      {{#each choice in choices}}
+        <option value={{choice.choice}}>{{choice.choice}}</option>
+      {{/each}}
+      </select>
+    </div>
